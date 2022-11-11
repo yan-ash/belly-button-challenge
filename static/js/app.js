@@ -10,22 +10,51 @@ d3.json("data/samples.json").then(function (data) {
   let otu_labels = default_data.otu_labels;
 
   // create default barchart
-  let defau_bar = [
+  let default_bar = [
     {
       x: default_data_value.slice(0, 10).reverse(),
-      y: otu_ids.slice(0, 10).reverse(),
+      y: otu_ids
+        .slice(0, 10)
+        .map((otu_ids) => `OTU${otu_ids}`)
+        .reverse(),
       text: otu_labels.slice(0, 10).reverse(),
       type: "bar",
       orientation: "h",
     },
   ];
 
+  //  define layout
   let bar_layout = {
     title: "The top 10 Microbial Species in Belly Buttons",
   };
-  Plotly.newPlot("bar", defau_bar, bar_layout);
+
+  // Display the default bar plot
+  Plotly.newPlot("bar", default_bar, bar_layout);
+
+  // create default Bubble plot
+  let default_bubble = [
+    {
+      x: otu_ids,
+      y: default_data_value,
+      text: otu_labels,
+      mode: "markers",
+      marker: {
+        size: default_data_value,
+        color: otu_ids,
+      },
+    },
+  ];
+  let bubble_layout = {
+    title: "Microbial Species in Belly Buttons(Bubble Chart)",
+    showlegend: false,
+  };
+  // Display the default bubble plot
+  Plotly.newPlot("bubble", default_bubble, bubble_layout);
+
+  // Create the keys and pairs for the demographic info pannel
+  let info_pannel = d3.select(".pannel_body").text();
+
+  // using . map method to create an array
+  let pannel_text = meta_data.map((info) => `${info.keys}:{info.values}`);
+  console.log(pannel_text);
 });
-
-//  define layout
-
-// Display the default plot
