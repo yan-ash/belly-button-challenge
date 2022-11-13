@@ -19,7 +19,7 @@ function getCharts(x) {
       {
         x: default_data_value.slice(0, 10).reverse(),
         y: otu_ids
-          .slice(0, 10)
+          .slice(0, 9)
           .map((otu_ids) => `OTU${otu_ids}`)
           .reverse(),
         text: otu_labels.slice(0, 10).reverse(),
@@ -78,13 +78,13 @@ function getCharts(x) {
           steps: [
             { range: [0, 1], color: "#ffffff" },
             { range: [1, 2], color: "#f2ffe6" },
-            { range: [2, 3], color: "#e6ffcc" },
-            { range: [3, 4], color: "#d9ffb3" },
-            { range: [4, 5], color: "#bfff80" },
-            { range: [5, 6], color: "#b3ff66" },
-            { range: [6, 7], color: "#a6ff4d" },
-            { range: [7, 8], color: "#99ff33" },
-            { range: [8, 9], color: "#73e600" },
+            { range: [2, 3], color: "#c6ffb3" },
+            { range: [3, 4], color: "#b3ff66" },
+            { range: [4, 5], color: "#66ff33" },
+            { range: [5, 6], color: "#33cc00" },
+            { range: [6, 7], color: "#269900" },
+            { range: [7, 8], color: "#1a6600" },
+            { range: [8, 9], color: "#0d3300" },
           ],
         },
       },
