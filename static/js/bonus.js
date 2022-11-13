@@ -98,7 +98,7 @@ function getCharts(x) {
     info_pannel.html("");
     // using . map method to create an array
     Object.entries(info_data).forEach(([key, value]) => {
-      info_pannel.append("h5").text(`${key}:${value}`);
+      info_pannel.append("h6").text(`${key}:${value}`);
     });
   });
 }

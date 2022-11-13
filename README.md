@@ -2,7 +2,8 @@
 
 <!-- Contents -->
 
-Please click the link below to find the deployed website.link
+Please click the link below to find the deployed website.
+https://yan-ash.github.io/belly-button-challenge/
 
 # Background <hr>
 
