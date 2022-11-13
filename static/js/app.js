@@ -1,3 +1,4 @@
+// call function getCharts
 function getCharts(x) {
   // #read in json data and log data
   d3.json("data/samples.json").then(function (data) {
@@ -5,6 +6,8 @@ function getCharts(x) {
     let sample_data = data.samples;
     let meta_data = data.metadata;
     // let default_data = sample_data[0];
+
+    // use filter() to loop through all the element ID
     let default_data = sample_data.filter((elem) => elem.id == x)[0];
     let info_data = meta_data.filter((elem) => elem.id == x)[0];
     let default_data_value = default_data.sample_values;
@@ -62,10 +65,10 @@ function getCharts(x) {
     });
   });
 }
-
+// declare funtion getData
 function getData() {
   let dropdownMenu = d3.select("#selDataset");
-  // Assign the value of the dropdown menu option to a letiable
+  // Assign the value of the dropdown menu option to a variable
   d3.json("data/samples.json").then(function (data) {
     console.log(data);
     let name_Data = data.names;
