@@ -96,7 +96,7 @@ function getCharts(x) {
     // Create the keys and pairs for the demographic info pannel
     let info_pannel = d3.select("#sample-metadata");
     info_pannel.html("");
-    // using . map method to create an array
+
     Object.entries(info_data).forEach(([key, value]) => {
       info_pannel.append("h6").text(`${key}:${value}`);
     });
@@ -116,7 +116,7 @@ function getData() {
     getCharts(name_Data[0]);
   });
 }
-
+// call function get data
 getData();
 
 function optionChanged(x) {
